@@ -14,6 +14,8 @@ protocol AuthViewProtocol: AnyObject {
 protocol AuthPresenterProtocol {
     init(view: AuthViewProtocol)
     func login(phone: String, password: String)
+    func forgotPasswordDidTap()
+    func signUpDidTap()
 }
 
 class AuthPresenter: AuthPresenterProtocol {
@@ -30,5 +32,13 @@ class AuthPresenter: AuthPresenterProtocol {
         
         // login firebase
         print("\(phone), \(password)")
+    }
+    
+    func forgotPasswordDidTap() {
+        
+    }
+    
+    func signUpDidTap() {
+        // buildSignUpModule and present
     }
 }
