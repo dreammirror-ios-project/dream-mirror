@@ -17,7 +17,6 @@
 		099B9E3027427D0700993BD9 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099B9E2F27427D0700993BD9 /* test.storyboard */; };
 		099B9E382742808C00993BD9 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E372742808C00993BD9 /* AuthPresenter.swift */; };
 		099B9E3A2742899A00993BD9 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E392742899A00993BD9 /* ModuleBuilder.swift */; };
-		099B9E3C27428D7400993BD9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E3B27428D7400993BD9 /* Model.swift */; };
 		3608E32827428DDC007EB286 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608E32727428DDC007EB286 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		099B9E2F27427D0700993BD9 /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
 		099B9E372742808C00993BD9 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		099B9E392742899A00993BD9 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
-		099B9E3B27428D7400993BD9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3608E32727428DDC007EB286 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +99,6 @@
 		099B9E3227427F5600993BD9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				099B9E3B27428D7400993BD9 /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,9 +131,9 @@
 		099B9E3627427F9C00993BD9 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
+				099B9E392742899A00993BD9 /* ModuleBuilder.swift */,
 				099B9E1027427A0600993BD9 /* AppDelegate.swift */,
 				099B9E1227427A0600993BD9 /* SceneDelegate.swift */,
-				099B9E392742899A00993BD9 /* ModuleBuilder.swift */,
 			);
 			path = Setup;
 			sourceTree = "<group>";
@@ -236,7 +233,6 @@
 				099B9E3A2742899A00993BD9 /* ModuleBuilder.swift in Sources */,
 				099B9E382742808C00993BD9 /* AuthPresenter.swift in Sources */,
 				099B9E2C27427B7500993BD9 /* Extensions.swift in Sources */,
-				099B9E3C27428D7400993BD9 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,8 @@ import UIKit
 
 class AuthViewController: UIViewController {
 
+    var presenter: AuthPresenterProtocol!
+    
     // MARK: - UI elements
     // TODO: UI components
     private let logoImageView: UIImageView = {
@@ -97,5 +99,26 @@ class AuthViewController: UIViewController {
             logoImageView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.15),
             logoImageView.widthAnchor.constraint(equalTo: logoImageView.heightAnchor),
         ])
+    }
+}
+
+extension AuthViewController: AuthViewProtocol {
+    
+}
+
+extension AuthViewController {
+    private func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc
+    private func keyboardWillShow() {
+        
+    }
+    
+    @objc
+    private func keyboardWillHide() {
+        
     }
 }
