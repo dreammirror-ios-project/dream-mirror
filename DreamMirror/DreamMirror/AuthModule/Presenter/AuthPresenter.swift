@@ -14,3 +14,7 @@ protocol AuthPresenterProtocol {
 protocol AuthViewProtocol {
     
 }
+
+class AuthPresenter: AuthPresenterProtocol {
+    
+}
