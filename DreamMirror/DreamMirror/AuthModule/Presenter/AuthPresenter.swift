@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AuthViewProtocol: AnyObject {
-    
+    func showAlert(message: String)
 }
 
 protocol AuthPresenterProtocol {
@@ -25,6 +25,10 @@ class AuthPresenter: AuthPresenterProtocol {
     }
     
     func login(phone: String, password: String) {
+        // validate data
+        view?.showAlert(message: "Fuck!")
+        
+        // login firebase
         print("\(phone), \(password)")
     }
 }

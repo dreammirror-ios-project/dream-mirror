@@ -112,6 +112,11 @@ class AuthViewController: UIViewController {
 }
 
 extension AuthViewController: AuthViewProtocol {
+    func showAlert(message: String) {
+        let alert = AlertService.alert(title: nil, message: message)
+        present(alert, animated: true, completion: nil)
+    }
+    
     
 }
 
