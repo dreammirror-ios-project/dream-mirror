@@ -53,7 +53,7 @@ class AuthViewController: UIViewController {
     private var fieldsStackView = UIStackView()
     private var mainStackView = UIStackView()
     
-    // MARK: - VC Lifecycle
+    // MARK: - VC Lifecycleqas
     override func viewDidLoad() {
         super.viewDidLoad()
 
