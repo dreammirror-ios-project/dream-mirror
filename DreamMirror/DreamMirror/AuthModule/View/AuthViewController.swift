@@ -24,6 +24,7 @@ class AuthViewController: UIViewController {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .roundedRect
+        textField.placeholder = "Введите номер телефона..."
         return textField
     }()
     
@@ -31,6 +32,8 @@ class AuthViewController: UIViewController {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .roundedRect
+        textField.placeholder = "Введите пароль..."
+        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -63,6 +66,10 @@ class AuthViewController: UIViewController {
         
         addSubviews()
         addConstraints()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     // MARK: - Helpers functions
@@ -104,21 +111,4 @@ class AuthViewController: UIViewController {
 
 extension AuthViewController: AuthViewProtocol {
     
-}
-
-extension AuthViewController {
-    private func registerKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc
-    private func keyboardWillShow() {
-        
-    }
-    
-    @objc
-    private func keyboardWillHide() {
-        
-    }
 }
