@@ -8,11 +8,11 @@
 import UIKit
 
 protocol Builder {
-    func buildAuthModule() -> UIViewController
+    static func buildAuthModule() -> UIViewController
 }
 
 class ModuleBuilder: Builder {
-    func buildAuthModule() -> UIViewController {
+    static func buildAuthModule() -> UIViewController {
         let view = AuthViewController()
         let presenter = AuthPresenter(view: view)
         view.presenter = presenter

@@ -25,6 +25,6 @@ class AuthPresenter: AuthPresenterProtocol {
     }
     
     func login(phone: String, password: String) {
-        print(phone, login)
+        print("\(phone), \(password)")
     }
 }

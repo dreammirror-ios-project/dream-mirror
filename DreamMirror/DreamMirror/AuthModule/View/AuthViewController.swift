@@ -20,7 +20,7 @@ class AuthViewController: UIViewController {
         return imageView
     }()
     
-    private let loginTextField: UITextField = {
+    private let phoneTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .roundedRect
@@ -63,6 +63,8 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        phoneTextField.delegate = self
+        passwordTextField.delegate = self
         
         addSubviews()
         addConstraints()
@@ -79,7 +81,7 @@ class AuthViewController: UIViewController {
                                        spacing: 0,
                                        distribution: .fillEqually)
         
-        fieldsStackView = UIStackView(arrangedSubviews: [loginTextField, passwordTextField],
+        fieldsStackView = UIStackView(arrangedSubviews: [phoneTextField, passwordTextField],
                                       axis: .vertical,
                                       spacing: 7, distribution: .fillProportionally)
         
@@ -111,4 +113,15 @@ class AuthViewController: UIViewController {
 
 extension AuthViewController: AuthViewProtocol {
     
+}
+
+extension AuthViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.phoneTextField {
+            self.passwordTextField.becomeFirstResponder()
+        } else if textField == self.passwordTextField {
+            presenter.login(phone: phoneTextField.text ?? "", password: passwordTextField.text ?? "")
+        }
+        return true
+    }
 }
