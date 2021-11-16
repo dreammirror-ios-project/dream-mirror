@@ -12,16 +12,18 @@ protocol MainscreenViewProtocol: AnyObject {
 }
 
 protocol MainscreenPresenterProtocol {
-    init(view: MainscreenViewProtocol)
+    init(view: MainscreenViewProtocol, router: RouterProtocol)
     
 }
 
 class MainscreenPresenter: MainscreenPresenterProtocol {
     
     weak var view: MainscreenViewProtocol?
+    var router: RouterProtocol
     
-    required init(view: MainscreenViewProtocol) {
+    required init(view: MainscreenViewProtocol, router: RouterProtocol) {
         self.view = view
+        self.router = router
     }
 }
 

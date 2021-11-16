@@ -1,0 +1,29 @@
+//
+//  ModuleBuilder.swift
+//  DreamMirror
+//
+//  Created by Максим Тараканов on 15.11.2021.
+//
+
+import UIKit
+
+protocol AssemblyBuilderProtocol {
+    func buildAuthModule(router: RouterProtocol) -> UIViewController
+    func buildMainscreenModule(router: RouterProtocol) -> UIViewController
+}
+
+class AssemblyBuilder: AssemblyBuilderProtocol {
+    func buildAuthModule(router: RouterProtocol) -> UIViewController {
+        let view = AuthViewController()
+        let presenter = AuthPresenter(view: view, router: router)
+        view.presenter = presenter
+        return view
+    }
+    
+    func buildMainscreenModule(router: RouterProtocol) -> UIViewController {
+        let view = MainscreenViewController()
+        let presenter = MainscreenPresenter(view: view, router: router)
+        view.presenter = presenter
+        return view
+    }
+}

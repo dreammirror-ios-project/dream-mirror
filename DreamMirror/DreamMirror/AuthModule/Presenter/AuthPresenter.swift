@@ -10,11 +10,10 @@ import UIKit
 
 protocol AuthViewProtocol: AnyObject {
     func showAlert(message: String)
-    func gotoMainTabBar()
 }
 
 protocol AuthPresenterProtocol {
-    init(view: AuthViewProtocol)
+    init(view: AuthViewProtocol, router: RouterProtocol)
     func login(phone: String, password: String)
     func forgotPasswordDidTap()
     func signUpDidTap()
@@ -23,9 +22,11 @@ protocol AuthPresenterProtocol {
 class AuthPresenter: AuthPresenterProtocol {
     
     weak var view: AuthViewProtocol?
+    var router: RouterProtocol
     
-    required init(view: AuthViewProtocol) {
+    required init(view: AuthViewProtocol, router: RouterProtocol) {
         self.view = view
+        self.router = router
     }
     
     func login(phone: String, password: String) {
@@ -35,9 +36,7 @@ class AuthPresenter: AuthPresenterProtocol {
         // login firebase
         print("\(phone), \(password)")
         // go to tabbar
-        view?.gotoMainTabBar()
-        
-        
+        router.showMainTabBarController()
     }
     
     func forgotPasswordDidTap() {
