@@ -16,7 +16,7 @@ struct Constants {
         struct ImagesNames {
             private init() {}
             
-            static let logo = "logo"
+            static let logo = "dreammirror_logo"
         }
         
         struct FontsNames {

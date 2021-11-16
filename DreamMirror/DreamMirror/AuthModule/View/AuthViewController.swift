@@ -16,7 +16,7 @@ class AuthViewController: UIViewController {
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .systemGray
+        imageView.image = UIImage(named: Constants.UI.ImagesNames.logo)
         return imageView
     }()
     
@@ -57,6 +57,7 @@ class AuthViewController: UIViewController {
     private var buttonsStackView = UIStackView()
     private var fieldsStackView = UIStackView()
     private var mainStackView = UIStackView()
+    private var formStackView = UIStackView()
     
     // MARK: - VC Lifecycleqas
     override func viewDidLoad() {
@@ -68,6 +69,12 @@ class AuthViewController: UIViewController {
         
         addSubviews()
         addConstraints()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        mainStackView.spacing = view.frame.height / 8
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -85,28 +92,37 @@ class AuthViewController: UIViewController {
                                       axis: .vertical,
                                       spacing: 7, distribution: .fillProportionally)
         
-        mainStackView = UIStackView(arrangedSubviews: [fieldsStackView, buttonsStackView],
+        formStackView = UIStackView(arrangedSubviews: [fieldsStackView, buttonsStackView],
                                     axis: .vertical,
                                     spacing: 14, distribution: .fillProportionally,
                                     alignment: .center)
         
-        view.addSubview(logoImageView)
+        mainStackView = UIStackView(arrangedSubviews: [logoImageView, formStackView],
+                                    axis: .vertical,
+                                    spacing: 30,
+                                    distribution: .fill,
+                                    alignment: .center)
+        
         view.addSubview(mainStackView)
         
     }
     
     func addConstraints() {
         NSLayoutConstraint.activate([
-            mainStackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            mainStackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            
+            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mainStackView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
+            mainStackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+//            formStackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+//            formStackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            formStackView.widthAnchor.constraint(equalTo: mainStackView.widthAnchor),
             
-            fieldsStackView.widthAnchor.constraint(equalTo: mainStackView.widthAnchor, multiplier: 0.7),
+            fieldsStackView.widthAnchor.constraint(equalTo: formStackView.widthAnchor, multiplier: 0.7),
             
-            logoImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 28),
-            logoImageView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.15),
-            logoImageView.widthAnchor.constraint(equalTo: logoImageView.heightAnchor),
+//            logoImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+//            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 28),
+            logoImageView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2),
+            logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor),
         ])
     }
 }
