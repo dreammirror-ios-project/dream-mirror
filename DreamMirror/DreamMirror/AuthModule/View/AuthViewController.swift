@@ -128,12 +128,45 @@ class AuthViewController: UIViewController {
 }
 
 extension AuthViewController: AuthViewProtocol {
+    
     func showAlert(message: String) {
         let alert = AlertService.alert(title: nil, message: message)
         present(alert, animated: true, completion: nil)
     }
     
+    func gotoMainTabBar() {
+        let tabBarViewController = setupTaBarController()
+        present(tabBarViewController, animated: true, completion: nil)
+    }
     
+    private func setupTaBarController() -> UITabBarController {
+        let tabBarViewController = UITabBarController()
+        let mainscreenVC = ModuleBuilder.buildMainscreenModule()
+        tabBarViewController.setViewControllers([mainscreenVC], animated: false)
+        tabBarViewController.modalPresentationStyle = .fullScreen
+        
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = Constants.UI.Colors.primary
+        
+        setTabBarItemColors(appearance.stackedLayoutAppearance)
+        setTabBarItemColors(appearance.inlineLayoutAppearance)
+        setTabBarItemColors(appearance.compactInlineLayoutAppearance)
+        
+        
+        tabBarViewController.tabBar.standardAppearance = appearance
+        tabBarViewController.tabBar.scrollEdgeAppearance = appearance
+        
+        return tabBarViewController
+    }
+    
+    private func setTabBarItemColors(_ itemAppearance: UITabBarItemAppearance) {
+        itemAppearance.normal.iconColor = .lightGray
+        itemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        
+        itemAppearance.selected.iconColor = Constants.UI.Colors.secondary
+        itemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Constants.UI.Colors.secondary]
+    }
 }
 
 extension AuthViewController: UITextFieldDelegate {

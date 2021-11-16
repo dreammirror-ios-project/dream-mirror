@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AuthViewProtocol: AnyObject {
     func showAlert(message: String)
+    func gotoMainTabBar()
 }
 
 protocol AuthPresenterProtocol {
@@ -28,10 +30,14 @@ class AuthPresenter: AuthPresenterProtocol {
     
     func login(phone: String, password: String) {
         // validate data
-        view?.showAlert(message: "Fuck!")
+        // view?.showAlert(message: "Fuck!")
         
         // login firebase
         print("\(phone), \(password)")
+        // go to tabbar
+        view?.gotoMainTabBar()
+        
+        
     }
     
     func forgotPasswordDidTap() {
