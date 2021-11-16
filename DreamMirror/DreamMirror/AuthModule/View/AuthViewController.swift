@@ -22,34 +22,26 @@ class AuthViewController: UIViewController {
     
     private let phoneTextField: UITextField = {
         let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "Введите номер телефона..."
+        textField.styleWith("+7(495)090-60-90")
         return textField
     }()
     
     private let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "Введите пароль..."
+        textField.styleWith("Пароль")
         textField.isSecureTextEntry = true
         return textField
     }()
     
     private let forgotPasswordButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.configuration = .plain()
-        button.configuration?.title = "Забыли пароль?"
+        button.stylePlainWith("Забыли пароль?")
         return button
     }()
     
     private let signUpButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.configuration = .plain()
-        button.configuration?.title = "Регистрация"
+        button.stylePlainWith("Регистрация")
         return button
     }()
     

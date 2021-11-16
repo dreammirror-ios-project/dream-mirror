@@ -20,6 +20,7 @@
 		099B9E412742ACE000993BD9 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E402742ACE000993BD9 /* AlertService.swift */; };
 		099B9E472743844F00993BD9 /* MainscreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E462743844F00993BD9 /* MainscreenPresenter.swift */; };
 		099B9E492743852D00993BD9 /* MainscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E482743852D00993BD9 /* MainscreenViewController.swift */; };
+		099B9E4B2743A80000993BD9 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E4A2743A80000993BD9 /* UIExtensions.swift */; };
 		3608E32827428DDC007EB286 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608E32727428DDC007EB286 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		099B9E402742ACE000993BD9 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		099B9E462743844F00993BD9 /* MainscreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainscreenPresenter.swift; sourceTree = "<group>"; };
 		099B9E482743852D00993BD9 /* MainscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainscreenViewController.swift; sourceTree = "<group>"; };
+		099B9E4A2743A80000993BD9 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		3608E32727428DDC007EB286 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 			children = (
 				099B9E2B27427B7500993BD9 /* Constants.swift */,
 				099B9E2A27427B7500993BD9 /* Extensions.swift */,
+				099B9E4A2743A80000993BD9 /* UIExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				099B9E2D27427B7500993BD9 /* Constants.swift in Sources */,
 				099B9E1127427A0600993BD9 /* AppDelegate.swift in Sources */,
 				3608E32827428DDC007EB286 /* SignUpViewController.swift in Sources */,
+				099B9E4B2743A80000993BD9 /* UIExtensions.swift in Sources */,
 				099B9E2927427B4100993BD9 /* AuthViewController.swift in Sources */,
 				099B9E1327427A0600993BD9 /* SceneDelegate.swift in Sources */,
 				099B9E472743844F00993BD9 /* MainscreenPresenter.swift in Sources */,
