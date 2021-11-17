@@ -42,6 +42,7 @@ class AuthViewController: UIViewController {
     private let signUpButton: UIButton = {
         let button = UIButton()
         button.stylePlainWith("Регистрация")
+        button.addTarget(self, action: #selector(signUpButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -116,6 +117,11 @@ class AuthViewController: UIViewController {
             logoImageView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2),
             logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor),
         ])
+    }
+    
+    @objc
+    func signUpButtonDidTap() {
+        presenter.signUpDidTap()
     }
 }
 

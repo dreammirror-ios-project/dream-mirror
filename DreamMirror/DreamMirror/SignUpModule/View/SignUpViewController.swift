@@ -7,8 +7,11 @@
 
 import UIKit
 
+
 class SignUpViewController: UIViewController {
 
+    var presenter: SignUpPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +29,11 @@ class SignUpViewController: UIViewController {
     }
     */
 
+}
+
+extension SignUpViewController: SignUpViewProtocol {
+    func showAlert(message: String) {
+        let alert = AlertService.alert(title: nil, message: message)
+        present(alert, animated: true, completion: nil)
+    }
 }

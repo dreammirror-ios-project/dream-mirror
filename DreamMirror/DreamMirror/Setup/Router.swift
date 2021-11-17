@@ -16,6 +16,7 @@ protocol RouterProtocol: RouterMainProtocol {
     func initialViewController()
     func showMainTabBarController()
     func popToRoot()
+    func showSignUpController()
 }
 
 class Router: RouterProtocol {
@@ -36,6 +37,11 @@ class Router: RouterProtocol {
     func showMainTabBarController() {
         let mainTabViewController = setupMainTaBarController(builder: assemblyBuilder, router: self)
         navigationController.present(mainTabViewController, animated: true, completion: nil)
+    }
+    
+    func showSignUpController() {
+        let signUpViewController = assemblyBuilder.buildSignUpModule(router: self)
+        navigationController.pushViewController(signUpViewController, animated: true)
     }
     
     private func setupMainTaBarController(builder: AssemblyBuilderProtocol, router: RouterProtocol) -> UITabBarController {

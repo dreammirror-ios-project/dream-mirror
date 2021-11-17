@@ -45,5 +45,6 @@ class AuthPresenter: AuthPresenterProtocol {
     
     func signUpDidTap() {
         // buildSignUpModule and present
+        router.showSignUpController()
     }
 }

@@ -24,6 +24,7 @@
 		099B9E4D2743CD9900993BD9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E4C2743CD9900993BD9 /* Router.swift */; };
 		3608E32827428DDC007EB286 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608E32727428DDC007EB286 /* SignUpViewController.swift */; };
 		3608E32E274520FF007EB286 /* signUpViewTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3608E32D274520FF007EB286 /* signUpViewTest.storyboard */; };
+		3608E331274531AD007EB286 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608E330274531AD007EB286 /* SignUpPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		099B9E4C2743CD9900993BD9 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3608E32727428DDC007EB286 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3608E32D274520FF007EB286 /* signUpViewTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = signUpViewTest.storyboard; sourceTree = "<group>"; };
+		3608E330274531AD007EB286 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 		3608E32527428DBE007EB286 /* SignUpModule */ = {
 			isa = PBXGroup;
 			children = (
+				3608E32F2745318A007EB286 /* Presenter */,
 				3608E32627428DCA007EB286 /* View */,
 			);
 			path = SignUpModule;
@@ -218,6 +221,14 @@
 				3608E32D274520FF007EB286 /* signUpViewTest.storyboard */,
 			);
 			path = SignUpModuleTest;
+			sourceTree = "<group>";
+		};
+		3608E32F2745318A007EB286 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3608E330274531AD007EB286 /* SignUpPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +307,7 @@
 				099B9E1127427A0600993BD9 /* AppDelegate.swift in Sources */,
 				3608E32827428DDC007EB286 /* SignUpViewController.swift in Sources */,
 				099B9E4B2743A80000993BD9 /* UIExtensions.swift in Sources */,
+				3608E331274531AD007EB286 /* SignUpPresenter.swift in Sources */,
 				099B9E2927427B4100993BD9 /* AuthViewController.swift in Sources */,
 				099B9E1327427A0600993BD9 /* SceneDelegate.swift in Sources */,
 				099B9E472743844F00993BD9 /* MainscreenPresenter.swift in Sources */,
