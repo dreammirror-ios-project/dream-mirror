@@ -25,3 +25,12 @@ extension UIStackView {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 }
+
+extension UIViewController {
+    func showAlert(title: String? = nil, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ок", style: .default, handler: nil)
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
+    }
+}

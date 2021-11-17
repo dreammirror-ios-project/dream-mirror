@@ -17,7 +17,6 @@
 		099B9E3027427D0700993BD9 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099B9E2F27427D0700993BD9 /* test.storyboard */; };
 		099B9E382742808C00993BD9 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E372742808C00993BD9 /* AuthPresenter.swift */; };
 		099B9E3A2742899A00993BD9 /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E392742899A00993BD9 /* AssemblyBuilder.swift */; };
-		099B9E412742ACE000993BD9 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E402742ACE000993BD9 /* AlertService.swift */; };
 		099B9E472743844F00993BD9 /* MainscreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E462743844F00993BD9 /* MainscreenPresenter.swift */; };
 		099B9E492743852D00993BD9 /* MainscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E482743852D00993BD9 /* MainscreenViewController.swift */; };
 		099B9E4B2743A80000993BD9 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E4A2743A80000993BD9 /* UIExtensions.swift */; };
@@ -40,7 +39,6 @@
 		099B9E2F27427D0700993BD9 /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
 		099B9E372742808C00993BD9 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		099B9E392742899A00993BD9 /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
-		099B9E402742ACE000993BD9 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		099B9E462743844F00993BD9 /* MainscreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainscreenPresenter.swift; sourceTree = "<group>"; };
 		099B9E482743852D00993BD9 /* MainscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainscreenViewController.swift; sourceTree = "<group>"; };
 		099B9E4A2743A80000993BD9 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 		099B9E3F2742ACC700993BD9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				099B9E402742ACE000993BD9 /* AlertService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -313,7 +310,6 @@
 				099B9E472743844F00993BD9 /* MainscreenPresenter.swift in Sources */,
 				099B9E3A2742899A00993BD9 /* AssemblyBuilder.swift in Sources */,
 				099B9E382742808C00993BD9 /* AuthPresenter.swift in Sources */,
-				099B9E412742ACE000993BD9 /* AlertService.swift in Sources */,
 				099B9E2C27427B7500993BD9 /* Extensions.swift in Sources */,
 				099B9E492743852D00993BD9 /* MainscreenViewController.swift in Sources */,
 				099B9E4D2743CD9900993BD9 /* Router.swift in Sources */,

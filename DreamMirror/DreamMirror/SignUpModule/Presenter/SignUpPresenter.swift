@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol SignUpViewProtocol: AnyObject {
-    func showAlert(message: String)
+    func showErrorAlert(message: String)
 }
 
 protocol SignUpPresenterProtocol {
