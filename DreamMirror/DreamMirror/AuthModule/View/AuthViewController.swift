@@ -9,42 +9,39 @@ import UIKit
 
 class AuthViewController: UIViewController {
 
+    var presenter: AuthPresenterProtocol!
+    
     // MARK: - UI elements
     // TODO: UI components
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .systemGray
+        imageView.image = UIImage(named: Constants.UI.ImagesNames.logo)
         return imageView
     }()
     
-    private let loginTextField: UITextField = {
+    private let phoneTextField: UITextField = {
         let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
+        textField.styleWith("+7(495)090-60-90")
         return textField
     }()
     
     private let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
+        textField.styleWith("Пароль")
+        textField.isSecureTextEntry = true
         return textField
     }()
     
     private let forgotPasswordButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.configuration = .plain()
-        button.configuration?.title = "Забыли пароль?"
+        button.stylePlainWith("Забыли пароль?")
         return button
     }()
     
     private let signUpButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.configuration = .plain()
-        button.configuration?.title = "Регистрация"
+        button.stylePlainWith("Регистрация")
         return button
     }()
     
@@ -52,15 +49,28 @@ class AuthViewController: UIViewController {
     private var buttonsStackView = UIStackView()
     private var fieldsStackView = UIStackView()
     private var mainStackView = UIStackView()
+    private var formStackView = UIStackView()
     
     // MARK: - VC Lifecycleqas
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        phoneTextField.delegate = self
+        passwordTextField.delegate = self
         
         addSubviews()
         addConstraints()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        mainStackView.spacing = view.frame.height / 8
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     // MARK: - Helpers functions
@@ -70,32 +80,60 @@ class AuthViewController: UIViewController {
                                        spacing: 0,
                                        distribution: .fillEqually)
         
-        fieldsStackView = UIStackView(arrangedSubviews: [loginTextField, passwordTextField],
+        fieldsStackView = UIStackView(arrangedSubviews: [phoneTextField, passwordTextField],
                                       axis: .vertical,
                                       spacing: 7, distribution: .fillProportionally)
         
-        mainStackView = UIStackView(arrangedSubviews: [fieldsStackView, buttonsStackView],
+        formStackView = UIStackView(arrangedSubviews: [fieldsStackView, buttonsStackView],
                                     axis: .vertical,
                                     spacing: 14, distribution: .fillProportionally,
                                     alignment: .center)
         
-        view.addSubview(logoImageView)
+        mainStackView = UIStackView(arrangedSubviews: [logoImageView, formStackView],
+                                    axis: .vertical,
+                                    spacing: 30,
+                                    distribution: .fill,
+                                    alignment: .center)
+        
         view.addSubview(mainStackView)
         
     }
     
     func addConstraints() {
         NSLayoutConstraint.activate([
-            mainStackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            mainStackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            
+            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mainStackView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
+            mainStackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+//            formStackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+//            formStackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            formStackView.widthAnchor.constraint(equalTo: mainStackView.widthAnchor),
             
-            fieldsStackView.widthAnchor.constraint(equalTo: mainStackView.widthAnchor, multiplier: 0.7),
+            fieldsStackView.widthAnchor.constraint(equalTo: formStackView.widthAnchor, multiplier: 0.7),
             
-            logoImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 28),
-            logoImageView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.15),
-            logoImageView.widthAnchor.constraint(equalTo: logoImageView.heightAnchor),
+//            logoImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+//            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 28),
+            logoImageView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2),
+            logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor),
         ])
+    }
+}
+
+extension AuthViewController: AuthViewProtocol {
+    
+    func showAlert(message: String) {
+        let alert = AlertService.alert(title: nil, message: message)
+        present(alert, animated: true, completion: nil)
+    }
+}
+
+extension AuthViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.phoneTextField {
+            self.passwordTextField.becomeFirstResponder()
+        } else if textField == self.passwordTextField {
+            presenter.login(phone: phoneTextField.text ?? "", password: passwordTextField.text ?? "")
+        }
+        return true
     }
 }

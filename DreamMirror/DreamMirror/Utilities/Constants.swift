@@ -16,7 +16,7 @@ struct Constants {
         struct ImagesNames {
             private init() {}
             
-            static let logo = "logo"
+            static let logo = "dreammirror_logo"
         }
         
         struct FontsNames {
@@ -31,7 +31,7 @@ struct Constants {
             private init() {}
             
             static let primary: UIColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            static let secondary: UIColor = #colorLiteral(red: 0.9698011279, green: 0.2449444234, blue: 0.1140630171, alpha: 1)
+            static let secondary: UIColor = .systemMint
             static let shapes: UIColor = #colorLiteral(red: 0.1568627451, green: 0.1568627451, blue: 0.1568627451, alpha: 1)
             static let secondaryShapes: UIColor = #colorLiteral(red: 0.2352941176, green: 0.2352941176, blue: 0.262745098, alpha: 0.6)
         }
