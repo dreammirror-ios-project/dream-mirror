@@ -52,7 +52,7 @@ class AuthViewController: UIViewController {
     private var mainStackView = UIStackView()
     private var formStackView = UIStackView()
     
-    // MARK: - VC Lifecycleqas
+    // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,12 +62,6 @@ class AuthViewController: UIViewController {
         
         addSubviews()
         addConstraints()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        mainStackView.spacing = view.frame.height / 8
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -101,8 +95,8 @@ class AuthViewController: UIViewController {
     }
     
     func addConstraints() {
+        mainStackView.spacing = view.frame.height / 8
         NSLayoutConstraint.activate([
-            
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mainStackView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
             mainStackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
