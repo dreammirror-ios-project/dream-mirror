@@ -18,6 +18,7 @@
 		099B9E382742808C00993BD9 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E372742808C00993BD9 /* AuthPresenter.swift */; };
 		099B9E3A2742899A00993BD9 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B9E392742899A00993BD9 /* ModuleBuilder.swift */; };
 		3608E32827428DDC007EB286 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608E32727428DDC007EB286 /* SignUpViewController.swift */; };
+		3608E32E274520FF007EB286 /* signUpViewTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3608E32D274520FF007EB286 /* signUpViewTest.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		099B9E372742808C00993BD9 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		099B9E392742899A00993BD9 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		3608E32727428DDC007EB286 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3608E32D274520FF007EB286 /* signUpViewTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = signUpViewTest.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		099B9E0F27427A0600993BD9 /* DreamMirror */ = {
 			isa = PBXGroup;
 			children = (
+				3608E32C274520E2007EB286 /* SignUpModuleTest */,
 				3608E32527428DBE007EB286 /* SignUpModule */,
 				099B9E3127427F4000993BD9 /* AuthModule */,
 				099B9E3527427F8100993BD9 /* Utilities */,
@@ -154,6 +157,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3608E32C274520E2007EB286 /* SignUpModuleTest */ = {
+			isa = PBXGroup;
+			children = (
+				3608E32D274520FF007EB286 /* signUpViewTest.storyboard */,
+			);
+			path = SignUpModuleTest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				099B9E1D27427A0700993BD9 /* LaunchScreen.storyboard in Resources */,
+				3608E32E274520FF007EB286 /* signUpViewTest.storyboard in Resources */,
 				099B9E3027427D0700993BD9 /* test.storyboard in Resources */,
 				099B9E1A27427A0700993BD9 /* Assets.xcassets in Resources */,
 			);
