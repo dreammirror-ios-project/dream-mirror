@@ -24,6 +24,7 @@
 		09D796F727469B1400DE2EE3 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D796F627469B1400DE2EE3 /* PhotoViewController.swift */; };
 		09D796F927469B4200DE2EE3 /* PhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D796F827469B4200DE2EE3 /* PhotoPresenter.swift */; };
 		09D796FB27469B4E00DE2EE3 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D796FA27469B4E00DE2EE3 /* PhotoModel.swift */; };
+		09D796FD2746DB2900DE2EE3 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D796FC2746DB2900DE2EE3 /* PersistanceService.swift */; };
 		3608E32827428DDC007EB286 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608E32727428DDC007EB286 /* SignUpViewController.swift */; };
 		3608E32E274520FF007EB286 /* signUpViewTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3608E32D274520FF007EB286 /* signUpViewTest.storyboard */; };
 		3608E331274531AD007EB286 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608E330274531AD007EB286 /* SignUpPresenter.swift */; };
@@ -49,6 +50,7 @@
 		09D796F627469B1400DE2EE3 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		09D796F827469B4200DE2EE3 /* PhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPresenter.swift; sourceTree = "<group>"; };
 		09D796FA27469B4E00DE2EE3 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		09D796FC2746DB2900DE2EE3 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersistanceService.swift; path = DreamMirror/PhotoModule/Model/PersistanceService.swift; sourceTree = SOURCE_ROOT; };
 		3608E32727428DDC007EB286 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3608E32D274520FF007EB286 /* signUpViewTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = signUpViewTest.storyboard; sourceTree = "<group>"; };
 		3608E330274531AD007EB286 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		099B9E3F2742ACC700993BD9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				09D796FC2746DB2900DE2EE3 /* PersistanceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				3608E32827428DDC007EB286 /* SignUpViewController.swift in Sources */,
 				099B9E4B2743A80000993BD9 /* UIExtensions.swift in Sources */,
 				3608E331274531AD007EB286 /* SignUpPresenter.swift in Sources */,
+				09D796FD2746DB2900DE2EE3 /* PersistanceService.swift in Sources */,
 				09D796F927469B4200DE2EE3 /* PhotoPresenter.swift in Sources */,
 				09D796FB27469B4E00DE2EE3 /* PhotoModel.swift in Sources */,
 				099B9E2927427B4100993BD9 /* AuthViewController.swift in Sources */,

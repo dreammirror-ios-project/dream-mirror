@@ -8,17 +8,38 @@
 import Foundation
 
 protocol PhotoViewProtocol: AnyObject{
-    
+    func updatePhotoCollection()
 }
 
 protocol PhotoPresenterProtocol {
-    init(view: PhotoViewProtocol)
+    init(view: PhotoViewProtocol, persistanceService: PersistanceServiceProtocol)
+    
+    func getPhotos()
 }
 
 class PhotoPresenter: PhotoPresenterProtocol {
     weak var view: PhotoViewProtocol?
+    let persistanceService: PersistanceServiceProtocol
     
-    required init(view: PhotoViewProtocol) {
+    var photos: [PhotoModel]? {
+        didSet {
+            view?.updatePhotoCollection()
+        }
+    }
+    
+    required init(view: PhotoViewProtocol, persistanceService: PersistanceServiceProtocol) {
         self.view = view
+        self.persistanceService = persistanceService
+    }
+    
+    func getPhotos() {
+        persistanceService.getPhotos { [weak self] result in
+            switch result {
+            case .success(let photos):
+                self?.photos = photos
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
