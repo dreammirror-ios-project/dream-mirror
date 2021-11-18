@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suu-En-HQi">
-                                <rect key="frame" x="125" y="675" width="164" height="31"/>
+                                <rect key="frame" x="125" y="674.5" width="164" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Зарегистрироваться"/>
                             </button>
@@ -92,7 +92,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="suu-En-HQi" firstAttribute="top" secondItem="Iox-0A-7rP" secondAttribute="bottom" constant="88.5" id="Hbv-tX-gTa"/>
+                            <constraint firstItem="suu-En-HQi" firstAttribute="top" secondItem="Iox-0A-7rP" secondAttribute="bottom" constant="88" id="Hbv-tX-gTa"/>
                             <constraint firstItem="Iox-0A-7rP" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Jtq-v9-Idn"/>
                             <constraint firstItem="Iox-0A-7rP" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="XzY-By-Nzb"/>
                             <constraint firstItem="suu-En-HQi" firstAttribute="centerX" secondItem="Iox-0A-7rP" secondAttribute="centerX" id="wjX-4R-oOX"/>
