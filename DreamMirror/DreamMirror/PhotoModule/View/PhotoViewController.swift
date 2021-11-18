@@ -17,6 +17,8 @@ class PhotoViewController: UIViewController {
         view.backgroundColor = Constants.UI.Colors.primary
         tabBarItem.image = UIImage(systemName: "photo")
         title = "Photo"
+        
+        
     }
 }
 
