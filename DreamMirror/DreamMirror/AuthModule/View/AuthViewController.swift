@@ -69,7 +69,7 @@ class AuthViewController: UIViewController {
     }
     
     // MARK: - Helpers functions
-    func addSubviews() {
+    private func addSubviews() {
         buttonsStackView = UIStackView(arrangedSubviews: [forgotPasswordButton, signUpButton],
                                        axis: .vertical,
                                        spacing: 0,
@@ -94,7 +94,7 @@ class AuthViewController: UIViewController {
         
     }
     
-    func addConstraints() {
+    private func addConstraints() {
         mainStackView.spacing = view.frame.height / 8
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
