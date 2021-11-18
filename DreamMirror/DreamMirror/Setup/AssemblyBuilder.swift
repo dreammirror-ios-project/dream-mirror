@@ -38,7 +38,8 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
     
     func buildPhotoModule(router: RouterProtocol) -> UIViewController {
         let view = PhotoViewController()
-        let presenter = PhotoPresenter(view: view)
+        let coreDataManager = CoreDataManager()
+        let presenter = PhotoPresenter(view: view, persistanceService: coreDataManager)
         view.presenter = presenter
         return view
     }

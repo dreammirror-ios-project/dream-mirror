@@ -14,6 +14,8 @@ protocol PhotoViewProtocol: AnyObject{
 protocol PhotoPresenterProtocol {
     init(view: PhotoViewProtocol, persistanceService: PersistanceServiceProtocol)
     
+    var photos: [PhotoModel]! { get }
+    
     func getPhotos()
 }
 
@@ -21,7 +23,7 @@ class PhotoPresenter: PhotoPresenterProtocol {
     weak var view: PhotoViewProtocol?
     let persistanceService: PersistanceServiceProtocol
     
-    var photos: [PhotoModel]? {
+    var photos: [PhotoModel]! {
         didSet {
             view?.updatePhotoCollection()
         }
@@ -30,6 +32,8 @@ class PhotoPresenter: PhotoPresenterProtocol {
     required init(view: PhotoViewProtocol, persistanceService: PersistanceServiceProtocol) {
         self.view = view
         self.persistanceService = persistanceService
+        
+        getPhotos()
     }
     
     func getPhotos() {

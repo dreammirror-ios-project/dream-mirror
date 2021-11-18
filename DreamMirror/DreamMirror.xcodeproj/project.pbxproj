@@ -25,6 +25,8 @@
 		09D796F927469B4200DE2EE3 /* PhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D796F827469B4200DE2EE3 /* PhotoPresenter.swift */; };
 		09D796FB27469B4E00DE2EE3 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D796FA27469B4E00DE2EE3 /* PhotoModel.swift */; };
 		09D796FD2746DB2900DE2EE3 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D796FC2746DB2900DE2EE3 /* PersistanceService.swift */; };
+		09D797002746DF2600DE2EE3 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D796FE2746DF2600DE2EE3 /* PhotoCollectionViewCell.swift */; };
+		09D797012746DF2600DE2EE3 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D796FF2746DF2600DE2EE3 /* PhotoCollectionViewCell.xib */; };
 		3608E32827428DDC007EB286 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608E32727428DDC007EB286 /* SignUpViewController.swift */; };
 		3608E32E274520FF007EB286 /* signUpViewTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3608E32D274520FF007EB286 /* signUpViewTest.storyboard */; };
 		3608E331274531AD007EB286 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608E330274531AD007EB286 /* SignUpPresenter.swift */; };
@@ -51,6 +53,8 @@
 		09D796F827469B4200DE2EE3 /* PhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPresenter.swift; sourceTree = "<group>"; };
 		09D796FA27469B4E00DE2EE3 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		09D796FC2746DB2900DE2EE3 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersistanceService.swift; path = DreamMirror/PhotoModule/Model/PersistanceService.swift; sourceTree = SOURCE_ROOT; };
+		09D796FE2746DF2600DE2EE3 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		09D796FF2746DF2600DE2EE3 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		3608E32727428DDC007EB286 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3608E32D274520FF007EB286 /* signUpViewTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = signUpViewTest.storyboard; sourceTree = "<group>"; };
 		3608E330274531AD007EB286 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				09D796F627469B1400DE2EE3 /* PhotoViewController.swift */,
+				09D796FE2746DF2600DE2EE3 /* PhotoCollectionViewCell.swift */,
+				09D796FF2746DF2600DE2EE3 /* PhotoCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				099B9E1D27427A0700993BD9 /* LaunchScreen.storyboard in Resources */,
+				09D797012746DF2600DE2EE3 /* PhotoCollectionViewCell.xib in Resources */,
 				3608E32E274520FF007EB286 /* signUpViewTest.storyboard in Resources */,
 				099B9E3027427D0700993BD9 /* test.storyboard in Resources */,
 				099B9E1A27427A0700993BD9 /* Assets.xcassets in Resources */,
@@ -349,6 +356,7 @@
 				3608E32827428DDC007EB286 /* SignUpViewController.swift in Sources */,
 				099B9E4B2743A80000993BD9 /* UIExtensions.swift in Sources */,
 				3608E331274531AD007EB286 /* SignUpPresenter.swift in Sources */,
+				09D797002746DF2600DE2EE3 /* PhotoCollectionViewCell.swift in Sources */,
 				09D796FD2746DB2900DE2EE3 /* PersistanceService.swift in Sources */,
 				09D796F927469B4200DE2EE3 /* PhotoPresenter.swift in Sources */,
 				09D796FB27469B4E00DE2EE3 /* PhotoModel.swift in Sources */,
