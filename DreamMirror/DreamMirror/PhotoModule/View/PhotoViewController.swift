@@ -11,6 +11,13 @@ class PhotoViewController: UIViewController {
 
     var presenter: PhotoPresenterProtocol!
     
+    // MARK: UI privates
+    private let backGround: UIView = {
+        let view = UIView()
+        view.backgroundColor = Constants.UI.Colors.secondary
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -56,7 +56,7 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        view.backgroundColor = Constants.UI.Colors.primary
         phoneTextField.delegate = self
         passwordTextField.delegate = self
         

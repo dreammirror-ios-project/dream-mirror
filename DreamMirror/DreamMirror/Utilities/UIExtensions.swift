@@ -19,6 +19,7 @@ extension UIButton {
     func stylePlainWith(_ title: String) {
         translatesAutoresizingMaskIntoConstraints = false
         configuration = .plain()
+        configuration?.baseForegroundColor = Constants.UI.Colors.secondary
         configuration?.title = title
     }
 }
