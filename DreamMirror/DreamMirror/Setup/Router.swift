@@ -47,7 +47,10 @@ class Router: RouterProtocol {
     private func setupMainTaBarController(builder: AssemblyBuilderProtocol, router: RouterProtocol) -> UITabBarController {
         let tabBarViewController = UITabBarController()
         let mainscreenVC = builder.buildMainscreenModule(router: router)
-        tabBarViewController.setViewControllers([mainscreenVC], animated: false)
+        mainscreenVC.loadViewIfNeeded()
+        let photoVC = builder.buildPhotoModule(router: router)
+        photoVC.loadViewIfNeeded()
+        tabBarViewController.setViewControllers([mainscreenVC, photoVC], animated: false)
         tabBarViewController.modalPresentationStyle = .fullScreen
         
         let appearance = UITabBarAppearance()

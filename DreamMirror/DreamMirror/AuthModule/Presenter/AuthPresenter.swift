@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol AuthViewProtocol: AnyObject {
-    func showAlert(message: String)
+    func showErrorAlert(message: String)
 }
 
 protocol AuthPresenterProtocol {

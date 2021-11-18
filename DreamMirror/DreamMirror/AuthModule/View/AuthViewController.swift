@@ -56,7 +56,7 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        view.backgroundColor = Constants.UI.Colors.primary
         phoneTextField.delegate = self
         passwordTextField.delegate = self
         
@@ -69,7 +69,7 @@ class AuthViewController: UIViewController {
     }
     
     // MARK: - Helpers functions
-    func addSubviews() {
+    private func addSubviews() {
         buttonsStackView = UIStackView(arrangedSubviews: [forgotPasswordButton, signUpButton],
                                        axis: .vertical,
                                        spacing: 0,
@@ -94,7 +94,7 @@ class AuthViewController: UIViewController {
         
     }
     
-    func addConstraints() {
+    private func addConstraints() {
         mainStackView.spacing = view.frame.height / 8
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -121,9 +121,8 @@ class AuthViewController: UIViewController {
 
 extension AuthViewController: AuthViewProtocol {
     
-    func showAlert(message: String) {
-        let alert = AlertService.alert(title: nil, message: message)
-        present(alert, animated: true, completion: nil)
+    func showErrorAlert(message: String) {
+        showAlert(title: nil, message: message)
     }
 }
 

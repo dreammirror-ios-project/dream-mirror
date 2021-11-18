@@ -11,6 +11,7 @@ protocol AssemblyBuilderProtocol {
     func buildAuthModule(router: RouterProtocol) -> UIViewController
     func buildMainscreenModule(router: RouterProtocol) -> UIViewController
     func buildSignUpModule(router: RouterProtocol) -> UIViewController
+    func buildPhotoModule(router: RouterProtocol) -> UIViewController
 }
 
 class AssemblyBuilder: AssemblyBuilderProtocol {
@@ -31,6 +32,13 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
     func buildMainscreenModule(router: RouterProtocol) -> UIViewController {
         let view = MainscreenViewController()
         let presenter = MainscreenPresenter(view: view, router: router)
+        view.presenter = presenter
+        return view
+    }
+    
+    func buildPhotoModule(router: RouterProtocol) -> UIViewController {
+        let view = PhotoViewController()
+        let presenter = PhotoPresenter(view: view)
         view.presenter = presenter
         return view
     }
