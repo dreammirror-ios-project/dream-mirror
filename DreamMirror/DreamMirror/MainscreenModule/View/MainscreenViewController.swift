@@ -66,7 +66,7 @@ class MainscreenViewController: UIViewController {
                                     distribution: .fill)
     
         view.addSubview(mainStackView)
-        view.addSubview(caloriesStackView)
+//        view.addSubview(caloriesStackView) ты уже добавил это стеквью в маинстеквью
     }
     
     
@@ -81,7 +81,9 @@ class MainscreenViewController: UIViewController {
             
             statsView.heightAnchor.constraint(equalTo: mainStackView.heightAnchor, multiplier: 0.5),
             
-              
+            //забыл добавить, что нижние - это квадраты
+            caloriesView.widthAnchor.constraint(equalTo: caloriesView.heightAnchor),
+            trainingView.widthAnchor.constraint(equalTo: trainingView.heightAnchor)
             
         ])
     }
