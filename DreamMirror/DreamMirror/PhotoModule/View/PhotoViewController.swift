@@ -34,14 +34,17 @@ class PhotoViewController: UIViewController {
     }()
     
     private let photoCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
+        let layout = InvertedCollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: 45, height: 60)
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 0
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.register(UINib(nibName: PhotoCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
 //        collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        collection.backgroundColor = .systemRed
+        collection.backgroundColor = Constants.UI.Colors.secondary
+        collection.showsVerticalScrollIndicator = false
         return collection
     }()
     
@@ -61,6 +64,8 @@ class PhotoViewController: UIViewController {
         tabBarItem.image = UIImage(systemName: "photo")
         title = "Фото"
         
+        photoCollectionView.transform = CGAffineTransform(scaleX: 1, y: -1)
+        
         progressBarConstraintStart = progressBar.widthAnchor.constraint(equalTo: progressBarBack.widthAnchor, multiplier: 0.1)
         progressBarConstraintProgress = progressBar.widthAnchor.constraint(equalTo: progressBarBack.widthAnchor, multiplier: 0.8)
         
@@ -70,6 +75,8 @@ class PhotoViewController: UIViewController {
         addSubviews()
         addConstraints()
     }
+    
+    
     
     private func addSubviews() {
         view.addSubview(background)
@@ -144,9 +151,17 @@ extension PhotoViewController: UICollectionViewDataSource {
     }
 }
 
-extension PhotoViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-        {
-            return CGSize(width: 90, height: 150)
-        }
+extension PhotoViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = photoCollectionView.frame.width / 7 - 2
+        return CGSize(width: width, height: width * 15/11)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }
