@@ -34,9 +34,12 @@ class PhotoViewController: UIViewController {
     }()
     
     private let photoCollectionView: UICollectionView = {
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: .init())
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: 45, height: 60)
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
+        collection.register(UINib(nibName: PhotoCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
 //        collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collection.backgroundColor = .systemRed
         return collection
@@ -136,6 +139,7 @@ extension PhotoViewController: UICollectionViewDataSource {
 //        let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
         cell.confifureCellWith(presenter.photos[indexPath.row])
+//        cell.contentView.backgroundColor = .systemBlue
         return cell
     }
 }
@@ -143,11 +147,6 @@ extension PhotoViewController: UICollectionViewDataSource {
 extension PhotoViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
         {
-            return CGSize(width: 90, height: 116)
-        }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
-        {
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            return CGSize(width: 90, height: 150)
         }
 }

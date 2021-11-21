@@ -13,6 +13,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dayLabel: UILabel!
     
     static let identifier = "PhotoCollectionViewCellIdentifier"
+    static let nibName = "PhotoCollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
