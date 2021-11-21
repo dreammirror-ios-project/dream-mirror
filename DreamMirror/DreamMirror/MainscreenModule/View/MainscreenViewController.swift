@@ -48,7 +48,7 @@ class MainscreenViewController: UIViewController {
         
         view.backgroundColor = Constants.UI.Colors.primary
         tabBarItem.image = UIImage(systemName: "house")
-        title = "Home"
+        title = "Главная"
         
         addSubviews()
         addConstraints()
@@ -59,11 +59,10 @@ class MainscreenViewController: UIViewController {
                                         axis: .horizontal,
                                         spacing: 20,
                                         distribution: .fill)
-        mainStackView = UIStackView(arrangedSubviews: [
-        tipsView, statsView, caloriesStackView],
-                                    axis: .vertical,
-        spacing: 24,
-                                    distribution: .fill)
+        mainStackView =     UIStackView(arrangedSubviews: [tipsView, statsView, caloriesStackView],
+                                        axis: .vertical,
+                                        spacing: 24,
+                                        distribution: .fill)
     
         view.addSubview(mainStackView)
 //        view.addSubview(caloriesStackView) ты уже добавил это стеквью в маинстеквью

@@ -56,7 +56,7 @@ class PhotoViewController: UIViewController {
 
         view.backgroundColor = Constants.UI.Colors.primary
         tabBarItem.image = UIImage(systemName: "photo")
-        title = "Photo"
+        title = "Фото"
         
         progressBarConstraintStart = progressBar.widthAnchor.constraint(equalTo: progressBarBack.widthAnchor, multiplier: 0.1)
         progressBarConstraintProgress = progressBar.widthAnchor.constraint(equalTo: progressBarBack.widthAnchor, multiplier: 0.8)
